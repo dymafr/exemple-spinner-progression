@@ -1,0 +1,41 @@
+<mat-card>
+	<mat-card-content>
+		<h2 class="exemple-h2">Progress spinner configuration</h2>
+
+		<section class="exemple-section">
+			<label class="exemple-margin">Color:</label>
+			<mat-radio-group [(ngModel)]="color">
+				<mat-radio-button class="exemple-margin" value="primary">
+					Primary
+				</mat-radio-button>
+				<mat-radio-button class="exemple-margin" value="accent">
+					Accent
+				</mat-radio-button>
+				<mat-radio-button class="exemple-margin" value="warn">
+					Warn
+				</mat-radio-button>
+			</mat-radio-group>
+		</section>
+
+		<section class="exemple-section">
+			<button mat-raised-button class="exemple-margin" color="primary" (click)="reset()">Reset</button>
+		</section>
+	</mat-card-content>
+</mat-card>
+
+<mat-card>
+	<mat-card-content>
+		<h2 class="exemple-h2">Determiné</h2>
+		<mat-progress-spinner class="exemple-margin" [color]="color" mode="determinate" [value]=progression>
+		</mat-progress-spinner>
+	</mat-card-content>
+</mat-card>
+
+<mat-card>
+	<mat-card-content>
+		<h2 class="exemple-h2">Indéterminé</h2>
+
+		<mat-progress-spinner *ngIf="progression < 100" class="exemple-margin" [color]="color" mode="indeterminate">
+		</mat-progress-spinner>
+	</mat-card-content>
+</mat-card>
